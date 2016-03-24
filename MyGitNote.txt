@@ -55,6 +55,24 @@ windows下安装 msysgit 参考：http://blog.chinaunix.net/uid-25806493-id-3319781.ht
 	$ git push -u origin master    #把本地库的所有内容推送到远程库上，由于远程库是空的，我们第一次推送master分支时，加上了-u参数，Git不但会把本地的master分支内容推送的远程新的master分支，还会把本地的master分支和远程的master分支关联起来，在以后的推送或者拉取时就可以简化命令。
 	
 	$ git push origin master       #第一次推送之后，即使用改命令即可。如果要推送其他分支，比如dev，就改成：$ git push origin dev
+
+
+################################
+	…or create a new repository on the command line
+
+	echo "# Dictation" >> README.md
+	git init
+	git add README.md
+	git commit -m "first commit"
+	git remote add origin git@github.com:FanRenGe/Dictation.git   # 通过 命令在 github上新建项目
+	git push -u origin master
+
+	…or push an existing repository from the command line
+
+	git remote add origin git@github.com:FanRenGe/Dictation.git
+	git push -u origin master
+##########################################
+
 	
 	$ git clone git@github.com:michaelliao/gitskills.git   #从远程库克隆到本地库
 	
