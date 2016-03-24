@@ -28,7 +28,7 @@ windows下安装 msysgit 参考：http://blog.chinaunix.net/uid-25806493-id-3319781.ht
 	
 	$ git add .    #把当前目录下所有文件添加到仓库
 	
-	$ git commit -m "commit message"   #把文件提交到仓库，-m后面输入的是本次提交的说明
+	$ git commit -m "commit message"   #把文件提交到仓库，-m后面输入的是本次提交的说明，不能为空
 	
 	$ git status    #查看工作区状态
 	
