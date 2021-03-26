@@ -16,13 +16,25 @@ $ git config --global user.email "email@example.com"
 
 ## 二、创建SSH Key
 
-在用户主目录下，看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：
+在用户主目录下,一般在 C:\Users\你的用户名\\.ssh）(mac: /Users/用户/.ssh）看看有没有.ssh目录，如果有，再看看这个目录下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接跳到下一步。如果没有，打开Shell（Windows下打开Git Bash），创建SSH Key：
 ``` shell
 $ ssh-keygen -t rsa -C "youremail@example.com"
 ```
 
 你需要把邮件地址换成你自己的邮件地址，然后一路回车，使用默认值即可，由于这个Key也不是用于军事目的，所以也无需设置密码。如果一切顺利的话，可以在用户主目录里找到.ssh目录，里面有 id_rsa 和 id_rsa.pub 两个文件，这两个就是SSH Key的秘钥对，id_rsa是私钥，不能泄露出去，id_rsa.pub是公钥，可以放心地告诉任何人。
+将ssh文件夹中的公钥（ id_rsa.pub）添加到GitHub管理平台中，在GitHub的个人账户的设置中找到
 
+    SSH and GPG kyes -- SSH keys -- Add new 
+    
+title随便起一个，将公钥（ id_rsa.pub）文件中内容复制粘贴到key中，然后点击Ass SSH key就好啦
+测试一下配置是否成功，在Git Bush命令框（就是刚才配置账号和邮箱的命令框）中继续输入以下命令，回车
+ ``` shell
+$ ssh -T git@github.com
+```
+要是看见下面的这句话就说明配置好啦
+``` shell
+Hi <yourname>! You've successfully authenticated, but GitHub does not provide shell access.
+```
 ## 三、常用命令
 
 ``` shell
